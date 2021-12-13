@@ -28,7 +28,7 @@ function unique(arr) {
     if (hashTable[arr[i]]) {
       hashTable[arr[i]]++;
     } else {
-      hashTable[arr[i]] == 1;
+      hashTable[arr[i]] = 1;
       newArr.push(arr[i]);
     }
   }
