@@ -35,32 +35,23 @@
 function getDuplicates(arr) {
   // instatiate variables
   let duplicates = [];
-  let numberCounter = {};
+  let hasDuplicate = new Set();
 
   // iterate through the array
   for (let i = 0; i < arr.length; i++) {
-    if (numberCounter[arr[i]]) {
-      numberCounter[arr[i]]++;
+    if (hasDuplicate.has(arr[i]) && !duplicates.includes(arr[i])) {
+      duplicates.push(arr[i]);
     } else {
-      numberCounter[arr[i]] = 1;
+      hasDuplicate.add(arr[i]);
     }
   }
-
-  console.log(numberCounter);
-
-  // iterate through the hashtable
-  for (const key in numberCounter) {
-    if (numberCounter[key] >= 2) {
-      duplicates.push(key);
-    }
-  }
-
-  // return duplicate array
+  
+  // return array with duplicates
   return duplicates;
 }
 
 let arr1 = [1, 2, 4, 2];
-let arr2 = [3, 2, 3, 2, 3, 3, 4];
+let arr2 = [3, 2, 3, 2, 3, 3, 4, 1];
 let arr3 = [1, 2, 3, 4];
 
 console.log(getDuplicates(arr1));
