@@ -46,20 +46,22 @@ function anagramPair(str1, str2) {
 
   // instantiate variables
   let letterCounter = {};
+  let newStr1 = str1.toLowerCase();
+  let newStr2 = str2.toLowerCase();
   
   // iterate through the array
-  for (let i = 0; i < str1.length; i++) {
-    if (letterCounter[str1[i]]) {
-      letterCounter[str1[i]]++;
+  for (let i = 0; i < newStr1.length; i++) {
+    if (letterCounter[newStr1[i]]) {
+      letterCounter[newStr1[i]]++;
     } else {
-      letterCounter[str1[i]] = 1;
+      letterCounter[newStr1[i]] = 1;
     }
   }
 
   // iterate through the second string 
-  for (let i = 0; i < str2.length; i++) {
-    if (letterCounter[str2[i]]) {
-      letterCounter[str2[i]]--;
+  for (let i = 0; i < newStr2.length; i++) {
+    if (letterCounter[newStr2[i]]) {
+      letterCounter[newStr2[i]]--;
     }
   }
 
