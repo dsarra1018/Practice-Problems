@@ -21,16 +21,12 @@ function sortBitArray(arr) {
     }
   }
 
-  // while value of zero key is > 0
-  while (zeroAndOnesCounter[0] > 0) {
-    arr.push(0);
-    zeroAndOnesCounter[0]--;
-  }
-
-  // while value of one key is > 0
-  while (zeroAndOnesCounter[1] > 0) {
-    arr.push(1);
-    zeroAndOnesCounter[1]--;
+  // iterate through hashtable
+  for (let i = 0; i <= 1; i++) {
+    while (zeroAndOnesCounter[i] > 0) {
+      arr.push(i);
+      zeroAndOnesCounter[i]--;
+    }
   }
 
   // return sorted array
