@@ -50,6 +50,7 @@
 let arr1 = [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1];
 let arr2 = [0, 0, 0];
 let arr3 = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1];
+let arr4 = [1, 1, 1];
 
 function numberOfOnes(arr) {
   // instantiate variables
@@ -59,6 +60,10 @@ function numberOfOnes(arr) {
 
   // iterate through the array
   while(start <= end) {
+    // edge case
+    if (arr[start] === 1 && arr[end] === 1) {return arr.length};
+
+    // move mid value accordingly
     mid = Math.floor((start + end) / 2);
     if (arr[mid] === 1 && arr[mid - 1] === 0) {return arr.length - mid};
     if (arr[mid] === 0) {
@@ -75,3 +80,4 @@ function numberOfOnes(arr) {
 console.log(numberOfOnes(arr1));
 console.log(numberOfOnes(arr2));
 console.log(numberOfOnes(arr3));
+console.log(numberOfOnes(arr4));
